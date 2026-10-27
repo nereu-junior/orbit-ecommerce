@@ -16,7 +16,7 @@ const PRODUCTS = [
 
 const SHIPPING_THRESHOLD = 299;
 const SHIPPING_FEE = 19.90;
-const MAX_QUANTITY = 10;
+const MAX_QUANTITY = 5;
 const STORAGE_CART = 'orbit-demo-cart-v1';
 const STORAGE_FAVORITES = 'orbit-demo-favorites-v1';
 const money = value => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
@@ -131,7 +131,7 @@ function addToCart(id) {
   if (!product) return;
   const existing = state.cart.find(item => item.id === id);
   if (existing) {
-    if (existing.qty >= MAX_QUANTITY) { notify('Limite de 10 unidades por produto.'); return; }
+    if (existing.qty >= MAX_QUANTITY) { notify(`Limite de ${MAX_QUANTITY} unidades por produto.`); return; }
     existing.qty++;
   } else {
     state.cart.push({ id, qty: 1 });
@@ -194,7 +194,7 @@ function changeQuantity(id, action) {
   if (!item) return;
   if (action === 'remove') state.cart = state.cart.filter(entry => entry.id !== id);
   else if (action === 'increase') {
-    if (item.qty >= MAX_QUANTITY) { notify('Limite de 10 unidades por produto.'); return; }
+    if (item.qty >= MAX_QUANTITY) { notify(`Limite de ${MAX_QUANTITY} unidades por produto.`); return; }
     item.qty++;
   } else if (action === 'decrease') {
     item.qty--;
