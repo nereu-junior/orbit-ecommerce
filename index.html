@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Orbit: loja virtual demonstrativa de tecnologia, desenvolvida com HTML, CSS e JavaScript." />
+    <meta name="theme-color" content="#101322" />
+    <title>Orbit — Tecnologia que acompanha você</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="announcement">Seu upgrade está aqui. <span>Frete grátis acima de R$ 299</span> <span aria-hidden="true">✦</span></div>
+
+    <header class="site-header" id="inicio">
+      <div class="container header-content">
+        <a class="brand" href="#inicio" aria-label="Orbit, voltar ao início">
+          <span class="brand-icon" aria-hidden="true"><span></span></span>
+          <span>orbit<span class="brand-dot">.</span></span>
+        </a>
+        <nav class="desktop-nav" aria-label="Navegação principal">
+          <a href="#produtos">Produtos</a>
+          <a href="#vantagens">Vantagens</a>
+          <a href="#sobre">Sobre a loja</a>
+        </nav>
+        <div class="header-actions">
+          <a href="#produtos" class="header-search" aria-label="Buscar produtos"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></a>
+          <button class="cart-trigger" id="open-cart" type="button" aria-label="Abrir carrinho com 0 itens">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.1a2 2 0 0 0 2 1.6h8.3a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+            <span class="cart-count" id="cart-count">0</span>
+          </button>
+          <button id="clear-cart" type="button" class="button clear-cart-button">
+                  Limpar carrinho
+          </button>
+          <button class="mobile-menu-trigger" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menu">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Menu mobile" hidden>
+        <a href="#produtos">Produtos</a><a href="#vantagens">Vantagens</a><a href="#sobre">Sobre a loja</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero container" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> TECNOLOGIA QUE INSPIRA</div>
+          <h1 id="hero-title">Eleve seu<br /><span>dia a dia.</span></h1>
+          <p>Produtos inteligentes, design que surpreende e tudo o que você precisa para dar o próximo passo.</p>
+          <div class="hero-buttons"><a class="button button-primary" href="#produtos">Explorar produtos <span aria-hidden="true">↗</span></a><a class="button button-outline" href="#vantagens">Por que Orbit?</a></div>
+          <div class="hero-footnote"><span class="sparkle" aria-hidden="true">✦</span> Escolhas que combinam com você</div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <span class="hero-orbit hero-orbit-one"></span>
+          <span class="hero-orbit hero-orbit-two"></span>
+          <img src="assets/hero-headphones.svg" alt="" />
+          <div class="hero-floating-tag"><span class="tag-icon">✦</span><span><strong>Design + inovação</strong><small>O match perfeito</small></span></div>
+          <span class="hero-side-label">ORBIT COLLECTION — 2026</span>
+        </div>
+      </section>
+
+      <section class="benefits container" id="vantagens" aria-label="Vantagens">
+        <div class="benefit"><span class="benefit-icon" aria-hidden="true">↗</span><div><strong>Frete especial</strong><small>Grátis a partir de R$ 299</small></div></div>
+        <div class="benefit"><span class="benefit-icon" aria-hidden="true">◈</span><div><strong>Produtos selecionados</strong><small>Tecnologia com personalidade</small></div></div>
+        <div class="benefit"><span class="benefit-icon" aria-hidden="true">♡</span><div><strong>Seus favoritos</strong><small>Salvos no seu navegador</small></div></div>
+      </section>
+
+      <section class="catalog container" id="produtos" aria-labelledby="products-title">
+        <div class="section-label">CURADORIA ORBIT <span aria-hidden="true">✳</span></div>
+        <div class="catalog-heading"><div><h2 id="products-title">Encontre seu <em>próximo favorito.</em></h2><p>Explore nossa seleção de acessórios e eletrônicos.</p></div><span class="product-total" id="product-count" aria-live="polite">10 produtos</span></div>
+        <div class="toolbar">
+          <div class="filters" role="group" aria-label="Filtrar produtos por categoria" id="category-filters">
+            <button class="filter-chip active" type="button" data-category="Todos" aria-pressed="true">Todos</button>
+            <button class="filter-chip" type="button" data-category="Áudio" aria-pressed="false">Áudio</button>
+            <button class="filter-chip" type="button" data-category="Periféricos" aria-pressed="false">Periféricos</button>
+            <button class="filter-chip" type="button" data-category="Acessórios" aria-pressed="false">Acessórios</button>
+            <button class="filter-chip" type="button" data-category="Smart" aria-pressed="false">Smart</button>
+          </div>
+          <div class="catalog-tools">
+            <label class="search-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input id="search-input" type="search" placeholder="Buscar produto..." aria-label="Buscar produtos" autocomplete="off" /></label>
+            <label class="sort-field"><span class="sr-only">Ordenar produtos</span><select id="sort-select" aria-label="Ordenar produtos"><option value="featured">Destaques</option><option value="price-asc">Menor preço</option><option value="price-desc">Maior preço</option><option value="name">Nome A–Z</option></select></label>
+            <button class="favorites-filter" id="favorites-filter" type="button" aria-pressed="false" title="Mostrar apenas favoritos"><span aria-hidden="true">♡</span><span class="sr-only">Mostrar apenas favoritos</span></button>
+          </div>
+        </div>
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">⌕</span><h3>Nenhum produto encontrado</h3><p>Tente mudar a busca ou os filtros.</p><button class="button button-dark" id="reset-filters" type="button">Limpar filtros</button></div>
+      </section>
+
+      <section class="feature-banner container" aria-labelledby="feature-title"><div><span class="feature-kicker">FEITO PARA O SEU RITMO</span><h2 id="feature-title">Um upgrade faz<br />toda a diferença.</h2><p>Do trabalho ao lazer, encontre tecnologia que acompanha cada momento.</p><a href="#produtos" class="button button-primary">Conhecer a coleção <span aria-hidden="true">↗</span></a></div><div class="feature-decoration" aria-hidden="true"><span class="feature-circle"></span><span class="feature-star">✳</span><span class="feature-word">ORBIT</span></div></section>
+    </main>
+
+    <footer class="footer" id="sobre"><div class="container footer-content"><div><a class="brand footer-brand" href="#inicio"><span class="brand-icon" aria-hidden="true"><span></span></span><span>orbit<span class="brand-dot">.</span></span></a><p>Uma experiência de e-commerce feita com HTML, CSS e JavaScript puro.</p></div><div class="footer-right"><span>PROJETO EDUCACIONAL</span><p>Esta é uma loja demonstrativa. Produtos, preços e pedidos são fictícios. Nenhum pagamento é realizado.</p></div></div><div class="container footer-bottom"><span>© 2026 Orbit. Projeto demonstrativo.</span><a href="#inicio">Voltar ao topo ↑</a></div></footer>
+
+    <div class="overlay" id="cart-overlay" hidden></div>
+    <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Seu carrinho" aria-hidden="true" tabindex="-1">
+      <div class="drawer-heading"><div><span class="section-label">SUA SELEÇÃO</span><h2>Meu carrinho <span id="drawer-count">(0)</span></h2></div><button type="button" class="icon-button" id="close-cart" aria-label="Fechar carrinho">×</button></div>
+      <div class="cart-body" id="cart-items"></div>
+      <div class="cart-bottom" id="cart-bottom">
+        <div class="shipping-message" id="shipping-message"></div>
+        <div class="shipping-bar"><div id="shipping-fill"></div></div>
+        <form class="coupon-form" id="coupon-form"><label for="coupon-input">Cupom de desconto</label><div><input id="coupon-input" autocomplete="off" placeholder="Digite seu cupom" /><button type="submit">Aplicar</button></div><small id="coupon-feedback" aria-live="polite">Experimente o cupom BEMVINDO10</small></form>
+        <div class="totals"><div><span>Subtotal</span><strong id="subtotal">R$ 0,00</strong></div><div><span>Desconto</span><strong id="discount">R$ 0,00</strong></div><div><span>Entrega</span><strong id="shipping-cost">R$ 0,00</strong></div><div class="total-row"><span>Total</span><strong id="total">R$ 0,00</strong></div></div>
+        <button type="button" class="button button-dark checkout-button" id="checkout-button">Finalizar pedido <span aria-hidden="true">→</span></button>
+        <p class="cart-disclaimer">Pedido demonstrativo. Nenhuma cobrança será feita.</p>
+      </div>
+    </aside>
+
+    <div class="modal-backdrop" id="product-modal" hidden><div class="product-modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1"><button type="button" id="close-product-modal" class="icon-button modal-close" aria-label="Fechar detalhes">×</button><div id="product-modal-body"></div></div></div>
+    <div class="modal-backdrop" id="checkout-modal" hidden><div class="checkout-card" role="dialog" aria-modal="true" aria-labelledby="checkout-title" tabindex="-1"><button type="button" id="close-checkout-modal" class="icon-button modal-close" aria-label="Fechar finalização">×</button><div class="checkout-content" id="checkout-content"><span class="section-label">QUASE LÁ</span><h2 id="checkout-title">Finalizar pedido</h2><p>Este formulário simula uma compra. Nenhum dado é enviado a um servidor ou serviço de pagamento.</p><form id="checkout-form"><label for="customer-name">Nome completo</label><input id="customer-name" name="name" required minlength="2" autocomplete="name" placeholder="Seu nome" /><label for="customer-email">E-mail</label><input id="customer-email" name="email" type="email" required autocomplete="email" placeholder="voce@exemplo.com" /><label for="customer-address">Endereço de entrega</label><input id="customer-address" name="address" required minlength="5" autocomplete="street-address" placeholder="Rua, número e complemento" /><div class="checkout-summary" id="checkout-summary"></div><button type="submit" class="button button-dark checkout-button">Simular pedido <span aria-hidden="true">→</span></button></form></div></div></div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
